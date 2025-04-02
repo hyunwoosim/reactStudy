@@ -38,6 +38,26 @@ export default App;
 
 ## css에도 module화로 적용 가능
 
-1. 이름.module.css 파일을 만들고
-2. .이름 {색깔, 폰트 등등}
-3. 적용할 파일에 import 시킨 후 className={improt이름.이름} 적용시킨다.
+1. `이름.module.css` 파일을 만들고
+2. `.이름 {색깔, 폰트 등등}`
+3. 적용할 파일에 import 시킨 후 `className={improt이름.이름}` 적용시킨다.
+
+```
+Button.module.css
+
+.btn {
+  color: white;
+  background-color: red;
+}
+
+
+Button.js
+
+import styled from "./Button.module.css";
+
+function Button({ text }) {
+  return <button className={styled.btn}>{text}</button>;
+}
+```
+
+# useEffect
