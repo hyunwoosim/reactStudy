@@ -61,3 +61,8 @@ function Button({ text }) {
 ```
 
 # useEffect
+
+# react-router
+
+- npm i react-router-dom@5.3.0
+- url로 연결 시켜주는 역할
