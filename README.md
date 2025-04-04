@@ -66,3 +66,62 @@ function Button({ text }) {
 
 - npm i react-router-dom@5.3.0
 - url로 연결 시켜주는 역할
+
+# react-router-dom 6 버젼이상부턴 이런 형식으로 써야한다.
+
+- switch ===>> routes
+- 주소를 <Route path="" element={}> element prop에 할당한다.
+
+## Before
+
+```
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./routes/Home";
+function App() {
+  return (
+    <Switch>
+      <Route path="/">
+        <Home />
+      </Route>
+    </Switch>
+  );
+}
+
+```
+
+## After
+
+```
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./routes/Home";
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+      </Routes>
+    </Router>
+  );
+}
+```
+
+## 파일로 연결하는것이 아닌 자체적으로 만들어서 할 때 역시 element 안에 감싸야한다.
+
+```
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/hello" element={<h1>hello</h1>}></Route>
+        <Route path="/movie" element={<Detail />}></Route>
+      </Routes>
+    </Router>
+  );
+}
+```
+
+# <Link to={경로}> </Link>
+
+- html의 href=""와 같은 기능
+- 하지만 `새로고침 되지 않고 이동한다`
