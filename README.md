@@ -163,3 +163,27 @@ export default Detail;
 ```
 
 - 넘겨준 값을 받아와 지정한 이름으로 값이 넘어온다.
+
+# Git pages를 사용할때 라우터가 경로를 찾지 못한다면 basename을 설정한면된다.
+
+1. BrowerRouter를 import한다.
+2. Router에 basename설정 `{process.env.PUBLIC_URL}>`
+
+```
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./routes/Home";
+import Detail from "./routes/Detail";
+function App() {
+  return (
+    <Router basename={process.env.PUBLIC_URL}>
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/hello" element={<h1>hello</h1>}></Route>
+        <Route path="/movie/:id" element={<Detail />}></Route>
+      </Routes>
+    </Router>
+  );
+}
+```
+
+## navigate를 사용했을땐 {process.env.PUBLIC_URL + "/"}> 직접 적어준다.

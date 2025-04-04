@@ -35,7 +35,9 @@ function Detail() {
         </div>
       )}
 
-      <button onClick={() => navigate("/")}>뒤로가기</button>
+      <button onClick={() => navigate(process.env.PUBLIC_URL + "/")}>
+        뒤로가기
+      </button>
     </div>
   );
 }
