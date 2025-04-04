@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/reactStudy/static/js/main.be5ca0cf.js",
+    "main.js": "/reactStudy/static/js/main.4bdb700e.js",
     "index.html": "/reactStudy/index.html",
-    "main.be5ca0cf.js.map": "/reactStudy/static/js/main.be5ca0cf.js.map"
+    "main.4bdb700e.js.map": "/reactStudy/static/js/main.4bdb700e.js.map"
   },
   "entrypoints": [
-    "static/js/main.be5ca0cf.js"
+    "static/js/main.4bdb700e.js"
   ]
 }
