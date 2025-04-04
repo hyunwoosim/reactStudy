@@ -72,7 +72,7 @@ function Button({ text }) {
 - switch ===>> routes
 - 주소를 <Route path="" element={}> element prop에 할당한다.
 
-## Before
+## react-router-dom 5 버젼
 
 ```
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -89,7 +89,7 @@ function App() {
 
 ```
 
-## After
+## react-router-dom 6 이상 버젼
 
 ```
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -125,3 +125,41 @@ function App() {
 
 - html의 href=""와 같은 기능
 - 하지만 `새로고침 되지 않고 이동한다`
+
+# /경로/원하는 값(ex: id)
+
+1. app.js에 `/경로:id`
+
+```
+  <Route path="/movie:id" element={<Detail />}></Route>
+```
+
+2.  파일.js의 `` Link to={`/경로/${값의 이름}`} ``
+
+```
+<Link to={`/movie/${id}`}>{title}</Link>
+```
+
+# useParams
+
+```
+  <Route path="/movie/:id" element={<Detail />}></Route>
+```
+
+- id 값으로 넘어왔을 때 useParams를 이용하면
+
+```
+import { useParams } from "react-router-dom";
+
+function Detail() {
+  const x = useParams();
+  console.log(x);
+
+  return <h1>Detail</h1>;
+}
+export default Detail;
+
+{id: '68073'}id: "68073"[[Prototype]]: Object
+```
+
+- 넘겨준 값을 받아와 지정한 이름으로 값이 넘어온다.
