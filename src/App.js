@@ -5,9 +5,15 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/hello" element={<h1>hello</h1>}></Route>
-        <Route path="/movie/:id" element={<Detail />}></Route>
+        <Route path={`${process.env.PUBLIC_URL}/`} element={<Home />}></Route>
+        <Route
+          path={`${process.env.PUBLIC_URL}/hello`}
+          element={<h1>hello</h1>}
+        ></Route>
+        <Route
+          path={`${process.env.PUBLIC_URL}/movie:id`}
+          element={<Detail />}
+        ></Route>
       </Routes>
     </Router>
   );
